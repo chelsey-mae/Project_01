@@ -10,7 +10,7 @@ def left_endpoint(x_vals: np.ndarray, func: np.ufunc) -> float:
     n = len(x_vals) - 1
     delta_x = (b - a) / n
     # Calculate left-endpoint sum
-    left_sum = np.sum(func(x_vals[n]) * delta_x)
+    left_sum = np.sum(func(x_vals[n] * delta_x))
     return left_sum
 
 def trapezoid(x_vals: np.ndarray, func: np.ufunc) -> float:
