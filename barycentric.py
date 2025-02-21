@@ -29,7 +29,6 @@ def get_barycentric_coordinates(triangle_coordinates, point_coordinates):
 
     return v
 
-
 def get_cartesian_coordinates(triangle_coordinates, barycentric_coordinates):
     # x and y coordinates for triangle vertices
     x1, x2, x3 = triangle_coordinates[0]
