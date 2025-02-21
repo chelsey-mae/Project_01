@@ -19,3 +19,15 @@ def trapezoid(x_vals: np.ndarray, func: np.ufunc) -> float:
     delta_x = (b - a) / n
     trapezoid_formula = (1 / 2 * delta_x) * (func(x_vals[0]) + 2 * np.sum(func(x_vals[1:n])) + func(x_vals[-1]))
     return trapezoid_formula
+
+def simpson(x_vals: np.ndarray, func: np.ufunc) -> float:
+    # checking if number of x_vals is odd. if it is even, then None is returned and the function stops
+    if len(x_vals) % 2 == 0:
+        return "Error: cannot have even number of elements in array"
+
+    # calculating dx or change in x. np.diff calculates the change between each x_val
+    change_in_x = np.diff(x_vals)
+    # calcualting midpoint needed for formula by taking the right endpoint and adding to left endpoint and dividing by 2
+    midpoints = (x_vals[:-1] + x_vals[1:]) / 2
+    # returning the formula given, f(a) takes in all the left endpoints, which in the end, will be every x_val besides the last. and f(b) takes all the right endpoints except the very first
+    return np.sum((change_in_x / 6) * (func(x_vals[:-1]) + 4 * func(midpoints) + func(x_vals[1:])))
