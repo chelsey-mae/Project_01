@@ -13,19 +13,19 @@ def get_barycentric_coordinates(triangle_coordinates, point_coordinates):
 
     #constructing matrix that has the x and y coordinates of the vertices
     #adding row of 1's to ensure the barycentric coordinates add up to 1, which is a rule stated above
-    b = np.array([
+    a = np.array([
         [x1, x2, x3],
         [y1, y2, y3],
         [1, 1, 1]
     ])
 
     #added 1 to vector to maintain 3x1 and consistency with b matrix
-    a = np.array(
+    b = np.array(
         [x, y, 1]
     )
 
     #calculates barycentric as 1D array
-    v = np.linalg.solve(b, a)
+    v = np.linalg.solve(a, b)
 
     return v
 
