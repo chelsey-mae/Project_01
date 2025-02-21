@@ -1,5 +1,6 @@
 import numpy as np
 # import matplotlib_inline
+#I forgot to write in my comment, I also created the file barycentric too
 def get_barycentric_coordinates():
     pass
 def get_cartesian_coordinates():
