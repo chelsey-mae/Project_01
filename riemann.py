@@ -1,4 +1,3 @@
-
 import numpy as np
 
 def left_endpoint(x_vals: np.ndarray, func: np.ufunc) -> float:
@@ -27,7 +26,7 @@ def simpson(x_vals: np.ndarray, func: np.ufunc) -> float:
 
     # calculating dx or change in x. np.diff calculates the change between each x_val
     change_in_x = np.diff(x_vals)
-    # calcualting midpoint needed for formula by taking the right endpoint and adding to left endpoint and dividing by 2
-    midpoints = (x_vals[:-1] + x_vals[1:]) / 2
+    # calculating midpoint needed for formula by taking the right endpoint and adding to left endpoint and dividing by 2
+    midpoint = (x_vals[:-1] + x_vals[1:]) / 2
     # returning the formula given, f(a) takes in all the left endpoints, which in the end, will be every x_val besides the last. and f(b) takes all the right endpoints except the very first
-    return np.sum((change_in_x / 6) * (func(x_vals[:-1]) + 4 * func(midpoints) + func(x_vals[1:])))
+    return np.sum((change_in_x / 6) * (func(x_vals[:-1]) + 4 * func(midpoint) + func(x_vals[1:])))
