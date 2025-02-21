@@ -1,4 +1,4 @@
-import numpy as np
+
 import numpy as np
 
 
@@ -45,7 +45,10 @@ def get_cartesian_coordinates(triangle_coordinates, barycentric_coordinates):
 
 def is_inside_triangle(triangle_coordinates: np.ndarray, point_coordinates: np.ndarray  ):
 
-    x, y = point_coordinates
+
+    x, y = point_coordinates # given coordinate points
+
+    # x and y coordinates for the triangle vertices
 
     x_1,x_2,x_3 = triangle_coordinates[0]
     y_1,y_2,y_3 = triangle_coordinates[1]
@@ -55,11 +58,18 @@ def is_inside_triangle(triangle_coordinates: np.ndarray, point_coordinates: np.n
                         [1,1,1]
                        ])
 
+    # creates a system of equations
+
     equals = np.array([x,y,1])
+
+    # solves for said system
 
     uppercase_p = np.linalg.solve(system, equals)
 
+    # returns a bool which checks to see if the solution of the system equal to 1 and non-negative/ is within the bounds of the triangle - True if is it is, False if not
+
     return np.all(uppercase_p >= 0)
 
-
-
+    #I know I could have reused barycentric for my code
+    # (i.e. bary_coord = get_barycentric_coordinates(triangle_coordinates, point_coordinates), return np.all(bary_coord >= 0).
+    # However, I did not know if that was allowed, so I just wrote it all out

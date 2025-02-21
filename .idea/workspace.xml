@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="773dda3c-c2f2-4e8e-b200-347a73111a48" name="Changes" comment="I created barycentric.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAD2502_P01_Sp25 (3).ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/MAD2502_P01_Sp25 (3).ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/barycentric.py" beforeDir="false" afterPath="$PROJECT_DIR$/barycentric.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/riemann.py" beforeDir="false" afterPath="$PROJECT_DIR$/riemann.py" afterDir="false" />
-    </list>
+    <list default="true" id="773dda3c-c2f2-4e8e-b200-347a73111a48" name="Changes" comment="For some reason, when someone added their def function, it deleted everything else. So, I am added that back. I only created is_inside_triangle." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -264,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740156692194</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="For some reason, when someone added their def function, it deleted everything else. So, I am added that back. I only created is_inside_triangle.">
+      <option name="closed" value="true" />
+      <created>1740161976788</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740161976788</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +287,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="left_riemann_sum" />
     <MESSAGE value="I created barycentric.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="I created barycentric.py" />
+    <MESSAGE value="For some reason, when someone added their def function, it deleted everything else. So, I am added that back. I only created is_inside_triangle." />
+    <option name="LAST_COMMIT_MESSAGE" value="For some reason, when someone added their def function, it deleted everything else. So, I am added that back. I only created is_inside_triangle." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Project123$riemann.coverage" NAME="riemann Coverage Results" MODIFIED="1740160958296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
