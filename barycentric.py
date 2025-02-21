@@ -1,6 +1,6 @@
 import numpy as np
-# import matplotlib_inline
-#I forgot to write in my comment, I also created the file barycentric too
+import numpy as np
+
 
 def get_barycentric_coordinates(triangle_coordinates, point_coordinates):
 
@@ -13,19 +13,19 @@ def get_barycentric_coordinates(triangle_coordinates, point_coordinates):
 
     #constructing matrix that has the x and y coordinates of the vertices
     #adding row of 1's to ensure the barycentric coordinates add up to 1, which is a rule stated above
-    a = np.array([
+    b = np.array([
         [x1, x2, x3],
         [y1, y2, y3],
         [1, 1, 1]
     ])
 
     #added 1 to vector to maintain 3x1 and consistency with b matrix
-    b = np.array(
+    a = np.array(
         [x, y, 1]
     )
 
     #calculates barycentric as 1D array
-    v = np.linalg.solve(a, b)
+    v = np.linalg.solve(b, a)
 
     return v
 
@@ -59,8 +59,7 @@ def is_inside_triangle(triangle_coordinates: np.ndarray, point_coordinates: np.n
 
     uppercase_p = np.linalg.solve(system, equals)
 
-    return uppercase_p[0:3] >= 0
-
+    return np.all(uppercase_p >= 0)
 
 
 
