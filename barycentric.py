@@ -54,12 +54,12 @@ def is_inside_triangle(triangle_coordinates: np.ndarray, point_coordinates: np.n
     x_1,x_2,x_3 = triangle_coordinates[0]
     y_1,y_2,y_3 = triangle_coordinates[1]
 
+    # creates a system of equations
+
     system = np.array([[x_1,x_2,x_3],
                       [y_1,y_2,y_3],
                         [1,1,1]
                        ])
-
-    # creates a system of equations
 
     equals = np.array([x,y,1])
 
@@ -67,7 +67,7 @@ def is_inside_triangle(triangle_coordinates: np.ndarray, point_coordinates: np.n
 
     uppercase_p = np.linalg.solve(system, equals)
 
-    # returns a bool which checks to see if the solution of the system equal to 1 and non-negative/ is within the bounds of the triangle - True if is it is, False if not
+    # returns a bool which checks to see if the solution of the system is equal to 1 and non-negative/ is within the bounds of the triangle - True if it is, False if not
 
     return np.all(uppercase_p >= 0)
 
