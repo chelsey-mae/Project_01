@@ -1,7 +1,6 @@
 
 import numpy as np
 
-#comment
 
 def get_barycentric_coordinates(triangle_coordinates, point_coordinates):
 
