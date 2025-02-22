@@ -1,6 +1,6 @@
+
 import numpy as np
-# import matplotlib_inline
-#I forgot to write in my comment, I also created the file barycentric too
+
 
 def get_barycentric_coordinates(triangle_coordinates, point_coordinates):
 
@@ -13,19 +13,19 @@ def get_barycentric_coordinates(triangle_coordinates, point_coordinates):
 
     #constructing matrix that has the x and y coordinates of the vertices
     #adding row of 1's to ensure the barycentric coordinates add up to 1, which is a rule stated above
-    a = np.array([
+    b = np.array([
         [x1, x2, x3],
         [y1, y2, y3],
         [1, 1, 1]
     ])
 
     #added 1 to vector to maintain 3x1 and consistency with b matrix
-    b = np.array(
+    a = np.array(
         [x, y, 1]
     )
 
     #calculates barycentric as 1D array
-    v = np.linalg.solve(a, b)
+    v = np.linalg.solve(b, a)
 
     return v
 
@@ -45,10 +45,15 @@ def get_cartesian_coordinates(triangle_coordinates, barycentric_coordinates):
 
 def is_inside_triangle(triangle_coordinates: np.ndarray, point_coordinates: np.ndarray  ):
 
-    x, y = point_coordinates
+
+    x, y = point_coordinates # given coordinate points
+
+    # x and y coordinates for the triangle vertices
 
     x_1,x_2,x_3 = triangle_coordinates[0]
     y_1,y_2,y_3 = triangle_coordinates[1]
+
+    # creates a system of equations
 
     system = np.array([[x_1,x_2,x_3],
                       [y_1,y_2,y_3],
@@ -57,10 +62,14 @@ def is_inside_triangle(triangle_coordinates: np.ndarray, point_coordinates: np.n
 
     equals = np.array([x,y,1])
 
+    # solves for said system
+
     uppercase_p = np.linalg.solve(system, equals)
 
-    return uppercase_p[0:3] >= 0
+    # returns a bool which checks to see if the solution of the system is equal to 1 and non-negative/ is within the bounds of the triangle - True if it is, False if not
 
+    return np.all(uppercase_p >= 0)
 
-
-
+    #I know I could have reused barycentric for my code
+    # (i.e. bary_coord = get_barycentric_coordinates(triangle_coordinates, point_coordinates), return np.all(bary_coord >= 0).
+    # However, I did not know if that was allowed, so I just wrote it all out
