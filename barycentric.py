@@ -3,7 +3,8 @@ import numpy as np
 
 
 def get_barycentric_coordinates(triangle_coordinates, point_coordinates):
-
+    #returns 1D array of barycentric coordinates. parameters include 2x3 array which represent triangle coordinates, 1D array representing (x,y)
+    
     #extracting the x and y coordinates from the 2x3 array
     x1, x2, x3 = triangle_coordinates[0]
     y1, y2, y3 = triangle_coordinates[1]
