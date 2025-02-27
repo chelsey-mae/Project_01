@@ -18,6 +18,8 @@ def trapezoid(x_vals: np.ndarray, func: np.ufunc) -> float:
     return trapezoid_formula
 
 def simpson(x_vals: np.ndarray, func: np.ufunc) -> float:
+    # returns an estimation of area under curve/riemann integrals using simpson estimation. parameters include a 1D array that contains x values, and a universal function chosen to solve integral
+    
     # calculating dx or change in x. np.diff calculates the change between each x_val
     change_in_x = np.diff(x_vals)
     # calculating midpoint needed for formula by taking the right endpoint and adding to left endpoint and dividing by 2
